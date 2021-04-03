@@ -8,7 +8,7 @@ let myString = "Hello, World!";
 let myRegex = /Hello/;
 let result = myRegex.test(myString);
 
-//2.Ignore Case While Matching
+//2.Ignore Case While Matching. '/i flag' & Find more than one match '/g flag'
 let myString = "freeCodeCamp";
 let fccRegex = /freeCodeCamp/i; //*this 'i' makes it ignore the case
 let result = fccRegex.test(myString);
