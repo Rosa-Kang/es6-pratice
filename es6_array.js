@@ -48,4 +48,4 @@ let Stu = [8,5,6,9,3,8,2,4,6,10,8,5,6,1,7,10,5,3,7,6]
 
 let ascending = Stu.sort((a, b) => a - b);
 console.log(ascending);
-console.log(Math.max(...ascending));
+
