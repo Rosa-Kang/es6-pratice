@@ -6,7 +6,22 @@
 
 // var vs let vs constant
 // The biggest difference between var vs let is the scope. While Var is a global scope and Let is Block scope.
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+ 
+  const failureItems = [];
+  arr.map((array) => {
+    failureItems.push(`<li class="text-warning">${array}</li>`);
+  })
 
+  return failureItems;
+}
+
+const failuresList = makeList(result.failure);
 // Hoisting is JavaScript's default behavior of moving declarations to the top.
 
 function checkScope() {
@@ -46,3 +61,51 @@ const age = user.age;
 const {name, age} = user;
 // and if you want to assign new variable name, you can do it like this
 const {name : newName, age:newAge} = user;
+//you can use this concept to destructure values from nested objects.
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+  
+const {today: {low : lowToday,high: highToday}} = LOCAL_FORECAST;
+
+//A new feature of ES6 is the template literal. 
+
+//Write Concise Object Literal Declarations Using Object Property Shorthand
+//ES6 provides the syntactic sugar to eliminate the redundancy of having to write x: x. You can simply write x once, and it will be converted tox: x (or something equivalent) under the hood. Here is the same function from above rewritten to use this new syntax:
+const getMousePosition = (x, y) => ({
+  x: x,
+  y: y
+});
+
+//turns -->
+const getMousePosition = (x, y) => ({ x, y });
+
+//With ES6, you can remove the function keyword and colon altogether when defining functions in objects. Here's an example of this syntax:
+const person = {
+  name: "Taylor",
+  sayHello: function() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+//becomes
+const person = {
+  name: "Taylor",
+  sayHello() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+
+//Use class Syntax to Define a Constructor Function
+//Create a JavaScript Promise
+//A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. 
+//Promise is a constructor function, so you need to use the new keyword to create one. It takes a function, as its argument, with two parameters - resolve and reject. These are methods used to determine the outcome of the promise. The syntax looks like this:
+
+const myPromise = new Promise((resolve, reject) => {
+    if(true) {
+    resolve ("Promise was fulfilled");
+  } else {
+    reject ("Promise was rejected");
+  }
+});
