@@ -5,7 +5,7 @@
 //const spreaded = ...arr;
 
 // var vs let vs constant
-// The biggest difference between var vs let is the scope. While Var is a global scope and Let is Block scope.
+// The biggest difference between var global, function vs let block, function. While Var is a global scope and Let is Block scope.
 const result = {
   success: ["max-length", "no-amd", "prefer-arrow-functions"],
   failure: ["no-var", "var-on-top", "linebreak"],
