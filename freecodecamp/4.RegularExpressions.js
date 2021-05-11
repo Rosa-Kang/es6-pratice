@@ -64,6 +64,8 @@ let username = "JackOfAllTrades";
 let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i; // Change this line
 let result = userCheck.test(username);
 
+//Recall that you use the plus sign + to look for one or more characters 
+//and the asterisk * to look for zero or more characters
 // 1. Usernames can only use alpha-numeric characters.
 // 2. The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
 // 3. Username letters can be lowercase and uppercase.
@@ -77,3 +79,13 @@ let result = userCheck.test(username);
 // ^[a-z]  :first character is a letter
 // \d\d+  :following characters are 2 or more digits
 // $  :end of input
+
+//7. match passwords that are greater than 5 characters long, and have two consecutive digits.
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6})(?=\w*\d{2})/;
+let result = pwRegex.test(sampleWord);
+
+//8. Reuse Patterns Using Capture Groups
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/; // Change this line
+let result = reRegex.test(repeatNum);
