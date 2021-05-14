@@ -24,21 +24,21 @@
 
 // 3. REDUCE : Sum up all numbers in the array
 
-// let arr2 = [10,12,23,34];
-// let result = arr2.reduce((prev, curr) => 
-//     prev + curr
-// , 0);
-// console.log(result);
+let arr2 = [10,12,23,34];
+let result = arr2.reduce((prev, curr) => 
+    prev + curr
+, 0);
+console.log(result);
 
-//4. For each : Add on text 'Day of the week' all of the days in the arr
+4. For each : Add on text 'Day of the week' all of the days in the arr
 
-// let arr3 = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-// let weekDay = arr3.map((day) => `${day} of the week`);
-// let weekDays = arr3.forEach((day) => {
-//     console.log(`${day} of the Week`);
-// })
-// console.log(weekDay);
-// console.log(arr3);
+let arr3 = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+let weekDay = arr3.map((day) => `${day} of the week`);
+let weekDays = arr3.forEach((day) => {
+    console.log(`${day} of the Week`);
+})
+console.log(weekDay);
+console.log(arr3);
 
 //5. Ascending order (Sort ();)
 let Stu = [8,5,6,9,3,8,2,4,6,10,8,5,6,1,7,10,5,3,7,6]
