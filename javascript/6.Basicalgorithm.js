@@ -213,7 +213,31 @@ function mutation(arr) {
   return arr[1]
           .toLowerCase()
           .split('')
-          .ever((l)=> arr[0].toLowerCase().split('').indexOf(l) != -1)
+          .every((l)=> arr[0].toLowerCase().split('').indexOf(l) != -1)
 }
 
-//15. 
+//using every, filter arrays from nested array that doenst have and elem.
+filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3);
+function filteredArray(arr, elem) {
+ let newArr = [];
+
+ for(let i=0; i<arr.length; i++){
+   if(arr[i].every((ar)=> ar !== elem )) {
+     newArr.push(arr[i])
+   }
+ }
+ return newArr;
+}
+
+
+
+//15. divide an array into two dimensional array
+function chunkArrayInGroups(arr, size) {
+  let a = [];
+  while(arr.length >0 ) {
+    a.push(arr.splice(0, size))
+  }
+  return console.log(a)
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
