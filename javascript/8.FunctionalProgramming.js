@@ -43,3 +43,44 @@ var social = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']);
 var video = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']);
 
 //Avoid Mutations and Side Effects Using Functional Programming
+//One of the core principles of functional programming is to not change things. 
+//Changes lead to bugs. It's easier to prevent bugs knowing 
+//that your functions don't change anything, including the function arguments or any global variable.
+
+// in functional programming, changing or altering things is called mutation, and the outcome is called a side effect. 
+//recall A function, ideally, should be a pure function, meaning that it does not cause any side effects.
+
+//Another principle of functional programming is to always declare your dependencies explicitly. 
+
+// the global variable
+var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+/* This function should add a book to the list and return the list */
+// New parameters should come before bookName
+
+function add(list, bookName) {
+  return [...list, bookName];
+}
+
+/* This function should remove a book from the list and return the list */
+// New parameters should come before the bookName one
+
+function remove(list, bookName) {
+  return list.filter(book => book !== bookName);
+}
+
+var newBookList = add(bookList, 'A Brief History of Time');
+var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+
+console.log(bookList);
+
+// Use the map Method to Extract Data from an Array
+const ratings = data.map(w => ({
+      title: w["Title"], 
+      rating: w["imdbRating"]
+
+}));
+
+let json = JSON.stringify(ratings)
+console.log(json);

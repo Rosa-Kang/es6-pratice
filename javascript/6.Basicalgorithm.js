@@ -241,3 +241,48 @@ function chunkArrayInGroups(arr, size) {
 }
 
 chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+//16.Palindrome Checker
+// to remove empty space ; replace(/[\W_]/g, "")
+palindrome("race car");
+
+function palindrome(str) {
+  let givenStr = str.toLowerCase()
+                    .replace(/[\W_]/g,"");
+  let test = givenStr.split('')
+                    .reverse()
+                    .join('');
+  return givenStr === test;
+}
+
+//17.Roman Numeral Converter
+convertToRoman(36);
+let romanMatrix = [
+  [1000, 'M'],
+  [900, 'CM'],
+  [500, 'D'],
+  [400, 'CD'],
+  [100, 'C'],
+  [90, 'XC'],
+  [50, 'L'],
+  [40, 'XL'],
+  [10, 'X'],
+  [9, 'IX'],
+  [5, 'V'],
+  [4, 'IV'],
+  [1, 'I']
+];
+
+function convertToRoman(num) {
+  if (num === 0) {
+    return '';
+  }
+  for (var i = 0; i < romanMatrix.length; i++) {
+    if (num >= romanMatrix[i][0]) {
+      return romanMatrix[i][1] + convertToRoman(num - romanMatrix[i][0]);
+    }
+  }
+}
+
+//18.Caesars Cipher [암호]
+
