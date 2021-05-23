@@ -286,3 +286,29 @@ function convertToRoman(num) {
 
 //18.Caesars Cipher [암호]
 
+//19. concat and filter and includes
+//Compare two arrays and return a new array with any items 
+//only found in one of the two given arrays, but not both.
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+function diffArray(a, b) {
+  let c = a.concat(b)
+           .filter(!a.includes(el) || !b.includes(el));
+           // .filter( a.indexOf(el) === -1  || b.indexOf(el) === -1) --> el is not defined. Error
+  return c;
+}
+
+//20. includes / indexOf / every
+
+//21. Remove all elements from the initial array that are of the same value as these arguments
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+function destroyer(arr, ...arg) {
+  let c = arr.filter((el)=> !arg.includes(el))
+  return c;
+}
+
+
+
+
+
+
