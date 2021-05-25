@@ -285,6 +285,16 @@ function convertToRoman(num) {
 }
 
 //18.Caesars Cipher [암호]
+rot13("SERR PBQR PNZC");
+function rot13(str) {
+  let a = str.split("")
+  let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  let c = a.map((e)=> alphabet.indexOf(e) < 0 ? e : alphabet.indexOf(e))
+  let d = c.map((el)=> (typeof(el) !== 'number'? el: el>= 13? el-13 : el+13))
+  let result = d.map((dee)=> typeof(dee) === 'number'? alphabet[dee] : dee)
+                .join("")
+  return result;
+}
 
 //19. concat and filter and includes
 //Compare two arrays and return a new array with any items 

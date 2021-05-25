@@ -84,3 +84,47 @@ const ratings = data.map(w => ({
 
 let json = JSON.stringify(ratings)
 console.log(json);
+
+//8. Remove Elements from an Array Using slice Instead of splice
+//splice('where to start', 'how many remove') --> mutate the original array and return the spliced value
+//slice('where to start', 'where to end') --> does not mutate the original array, returns a new array
+//that can be saved into a variable.
+let inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+nonMutatingSplice(inputCities);
+function nonMutatingSplice(cities) {
+  // Only change code below this line
+  return cities.slice(0, 3);
+
+  // Only change code above this line
+}
+
+//9.Return Part of an Array Using the slice Method
+let inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+sliceArray(inputAnim, 1, 3);
+
+function sliceArray (anim, beginSlice, endSlice) {
+  return   anim.slice(beginSlice, endSlice)
+  }
+
+//10.Implement the filter Method on a Prototype
+console.log(filteredList);
+let filteredList = watchList
+  .map(function(e) {
+    return { title: e["Title"], rating: e["imdbRating"] };
+  })
+  .filter(e => e.rating >= 8);
+
+  //11.Implement map on a Prototype
+  var s = [23, 65, 98, 5];
+
+Array.prototype.myMap = function(callback) {
+  var newArray = [];
+  for (let i =0; i<this.length; i++){
+    newArray.push(callback(this[i]))
+  }
+  return newArray;
+};
+
+var new_s = s.myMap(function(item) {
+  return item * 2;
+});
