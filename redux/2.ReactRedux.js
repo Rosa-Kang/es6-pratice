@@ -72,6 +72,7 @@ const store = Redux.createStore(messageReducer)
 //PROVIDER to Connect Redux to React
 //React Redux package provides a small API with two key features: Provider and connect.
 //Provider is a Wrapper component from React Redux that wraps the React app passing the STORE as a prop.
+//The Provider allows you to give {STATE} and [DISPATCH] to your React components.
 
 const Provider = ReactRedux.Provider;
 
@@ -84,3 +85,48 @@ class AppWrapper extends React.Component {
         )
     }
 };
+
+//When you specify which state and action you want your component access to,
+//You can use 
+mapStateToProps()
+mapDispatchToProps()
+//functions.
+//Behind the scenes, React Redux uses the 
+store.subscribe()  //method to implement 
+mapStateToProps()
+
+//Create a property messages in the object that's being returned, and set it to state.
+//Create a function mapStateToProps(). This function should take state as an argument,
+//then return an object which maps that state to specific property names.
+
+const state=[];
+
+function mapStateToProps(state) {
+    return {
+        message: state
+    }
+}
+
+//Write the function mapDispatchToProps() that takes dispatch as an argument,
+//then returns an object. 
+//The object should have a property submitNewMessage set to the dispatch function
+// which takes a parameter for the new message to add when it dispatches addMessage().
+const addMessage = (message) => {
+  return {
+    type: 'ADD',
+    message: message
+  }
+};
+
+function mapDispatchToProps(dispatch) {
+    return {
+        submitNewMessage: (message) => dispatch(addMessage(message))
+    }
+};
+
+//Connect Redux to React
+const connect = ReactRedux.connect;
+
+const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+
+//Connect Redux to the Messages App
