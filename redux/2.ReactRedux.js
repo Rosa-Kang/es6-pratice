@@ -19,7 +19,7 @@ class DisplayMessages extends React.Component{
     submitMessages() {
         this.setState({
             input:'',
-            meessages:[...this.state.messages, this.state.input]
+            messages:[...this.state.messages, this.state.input]
         })
     }
 
@@ -40,7 +40,7 @@ class DisplayMessages extends React.Component{
 }
 
 //2.Extract State Logic into Redux
-//In REDUX, we need (1)action type, (2)action creator, (3)reducer, (4)store, and (5)Provider.
+//In REDUX, we need (1)action type, (2)action creator, (3)reducer, (4)store, and (5)Provider & (6)connect.
 //The only functionality your app has is to add new messages from 
 //the user to an unordered list. The example is simple in order to demonstrate how React and Redux work together.
 
@@ -88,8 +88,9 @@ class AppWrapper extends React.Component {
 
 //When you specify which state and action you want your component access to,
 //You can use 
-mapStateToProps()
-mapDispatchToProps()
+
+mapStateToProps() //this is used to retrieve the store state
+mapDispatchToProps() // this is used to retrieve the actions and dispatch them to the store
 //functions.
 //Behind the scenes, React Redux uses the 
 store.subscribe()  //method to implement 
