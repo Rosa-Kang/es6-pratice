@@ -6,8 +6,7 @@ function myFun() {
 }
 myFun();
 
-// The above will display the string Hello 
-// in the console, and return the string World. 
+
 // The string byebye will never display in the console, 
 // because the function exits at the return statement.
 
