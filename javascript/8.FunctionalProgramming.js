@@ -128,3 +128,14 @@ Array.prototype.myMap = function(callback) {
 var new_s = s.myMap(function(item) {
   return item * 2;
 });
+
+//12. Combine Two Arrays Using the concat Method
+nonMutatingConcat(first, second);
+
+function nonMutatingConcat(original, attach) {
+  
+   return original.concat(attach)
+}
+
+const first = [1, 2, 3];
+const second = [4, 5];

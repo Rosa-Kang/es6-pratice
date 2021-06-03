@@ -104,7 +104,7 @@ const person = {
 
 const myPromise = new Promise((resolve, reject) => {
     if(true) {
-    resolve ("Promise was fulfilled");
+    resolve ("Promise was fulfilled")
   } else {
     reject ("Promise was rejected");
   }
