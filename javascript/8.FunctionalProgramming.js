@@ -139,3 +139,41 @@ function nonMutatingConcat(original, attach) {
 
 const first = [1, 2, 3];
 const second = [4, 5];
+
+//13. Filter, Reduce to find Average Ratings of Christopher Nolan's movies
+// string to number : Number(value);
+getRating(watchList);
+
+function getRating(watchList){
+  let ratings = watchList
+                    .filter((li)=> li.Director === "Christopher Nolan")
+                    .map((chris)=> Number(chris.imdbRating)) ; // Number is an api function in JavaScript
+  let averageRating = ratings.reduce((prev, curr)=> prev + curr, 0) / rating.length;
+
+  return averageRating;
+}
+
+//15. Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem
+// Higher order function is such as map, filter, and reducers that returns a new array by looping through an original array without having to use loop functions like for, while or forEach.
+//should return a new array containing the squares of only the positive integers (decimal numbers are not integers) 
+//when determining decimal ; use num % parseInt(num) === 0 ***
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+
+const squareList = arr => {
+
+  let filtered = arr.filter((ar) => ar >0 && ar % parseInt(ar) === 0)
+                    .map((int)=> int * int) // or you can use .map((int)=> Math.pow(int, 2)) 
+                    //The Math.pow() function returns the base to the exponent power, as in base^exponent. x의 n제곱을 영어로 the power of x to the n
+  return filtered;
+}
+
+//16. Sort an Array Alphabetically using the sort Method
+// When transferring a string array in AlphabeticalOrder, we should use callback function inside sorting method.
+// the callback should be ; (a,b) => a ===b ? 0 : a>b ? 1:-1
+alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+
+function alphabeticalOrder(arr) {
+  let sorted = arr.sort((a,b) => a ===b ? 0 : a>b ? 1:-1);
+  return sorted ;
+}
+
