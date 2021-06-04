@@ -177,3 +177,70 @@ function alphabeticalOrder(arr) {
   return sorted ;
 }
 
+//17.Return a Sorted Array Without Changing the Original Array
+var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  let sorted = arr.slice();
+  sorted.sort((a, b)=> a-b);
+  return sorted;
+}
+nonMutatingSort(globalArray);
+
+//18. Split a String into an Array Using the split Method
+//The function should return the array. Note that the words are not always separated by spaces,
+//and the array should not contain punctuation.
+//regex for splitting a string based punctuation or non-word character is; /[^A-Za-z0-9_]/ or /\W/
+splitify("Hello World,I-am code");
+function splitify(str) {
+  let splitted = str.split(/[^A-Za-z0-9_]/) //or str.split(/\W/)
+  return splitted;
+}
+
+
+//19.Combine an Array into a String Using the join Method
+sentensify("May-the-force-be-with-you");
+
+function sentensify(str) {
+  
+  let sent = str.split(/\W/)
+                .join(' '); //join(' ') 는 조인할 떄 각 value 사이의 공간을 둠***
+  return sent; //will return ('May the force be with you')
+}
+
+//20.Apply Functional Programming to Convert Strings to URL Slugs
+//it should return the string into lowercase, space should be '-'
+urlSlug(' Winter Is  Coming') //should return winter-is-coming
+
+function urlSlug(title) {
+    let slug = title.toLowerCase()
+                    .trim() //trim string to remove any empty space in the beginning
+                    .split(/\s+/) //if split(' ') --> you won't be able to remove any duplicated empty space (s+).
+                    .join('-'); //replace empty space with - and join.
+
+    return slug;
+}
+
+//21.Use the every Method to Check that Every Element in an Array Meets a Criteria
+// every method: to return boolean checking if every element of an arr meets the requirement.
+checkPositive([1, 2, 3, -4, 5]);
+function checkPositive(arr) {
+
+   return arr.every((ar)=> ar >0 );
+
+}
+
+//some method to return boolean checking if any element meets the requirement
+checkSome([1, 2, 3, -4, 5]);
+function checkSome(arr) {
+  return arr.some((ar)=> ar>0 );
+}
+
+//22.Introduction to Currying and Partial Application
+add(10)(20)(30);
+function add(x) {
+  return function(y) {
+    return function (z) {
+        return x + y + z;
+    }
+  }
+}
